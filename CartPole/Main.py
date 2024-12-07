@@ -27,8 +27,8 @@ class CartPole():
 
     def create_environment(self, human=True):
         render = "human" if human else "rgb_array"
-        #return gym.make('CartPole-v1',render_mode=render)
-        return gym.make_vec("CartPole-v1", num_envs=3, vectorization_mode="vector_entry_point")
+        return gym.make('CartPole-v1',render_mode=render)
+        #return gym.make_vec("CartPole-v1", num_envs=3, vectorization_mode="vector_entry_point")
     
     def discretizer(self, angle, pole_velocity):
         est = KBinsDiscretizer(n_bins=self.bins, encode='ordinal', strategy='uniform')
@@ -105,5 +105,5 @@ class CartPole():
 
 
 game = CartPole()
-#game.start_training()
+game.start_training()
 game.run_best_model()
