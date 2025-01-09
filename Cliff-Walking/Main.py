@@ -2,10 +2,10 @@ import gymnasium as gym
 import numpy as np
 
 
-class CliffWalking():
+class CliffWalking:
 
     def __init__(self):
-        self.env = self.create_environment(human=False)
+        self.env = self.create_environment(human=True)
         self.episodes = 100
         self.done = False
 
